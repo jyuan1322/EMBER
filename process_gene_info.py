@@ -125,10 +125,9 @@ def get_all_beta1_cmc():
     return expr_dict
 
 if __name__=="__main__":
-    # gene_props = gen_gene_props(CMC_only=False, p_cutoff = None)
-    # gene_props = gen_gene_props(CMC_only=False, p_cutoff = 1e-5)
-    # expr_dict = get_all_beta1()
-    # pickle.dump((gene_props, expr_dict), open("ember_all_betas.pickle", "wb"))
+    gene_props = gen_gene_props(CMC_only=False, p_cutoff = 1e-5)
+    expr_dict = get_all_beta1()
+    pickle.dump((gene_props, expr_dict), open("ember_all_betas.pickle", "wb"))
 
     # write SNP region file (for each gene) into file for imputation
     gene_props, expr_dict = pickle.load(open("ember_all_betas.pickle","rb"))
